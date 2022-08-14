@@ -8,6 +8,7 @@ use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminPostsController;
+use App\Http\Controllers\ImportDataController;
 use App\Http\Controllers\AdminCategoryController;
 
 /*
@@ -40,6 +41,10 @@ Route::get('/dashboard', function(){
 })->middleware('admin');
 
 Route::resource('/dashboard/posts',  AdminPostsController::class)->middleware('admin');
+
+Route::get('/import', [ImportDataController::class, 'list'])->middleware('admin');
+Route::post('/import_data', [ImportDataController::class, 'import_data'])->name('import_data')->middleware('admin');
+
 
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 Route::resource('/dashboard/users', AdminUserController::class)->except('show');

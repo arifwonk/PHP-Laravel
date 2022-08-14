@@ -13,7 +13,7 @@ class PostController extends Controller
     {
         return view('posts', [
             'title' => 'Database Spareparts',
-            'posts' => Post::latest()->filter(request(['search', 'category', 'username']))->Paginate(10)->withQueryString(),
+            'posts' => Post::latest()->filter(request(['search', 'category', 'username']))->Paginate(50)->withQueryString(),
             'categories' => Category::all(),
 
         ]);

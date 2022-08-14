@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
 
         ]);
 
-        User::Factory(2)->create();
+        // User::Factory(1)->create();
 
         Category::create([
             'name' => 'Mechanic',
@@ -44,7 +44,17 @@ class DatabaseSeeder extends Seeder
             'slug' => 'instruments'
         ]);
 
-        Post::Factory(30)->create();
+        Category::create([
+            'name' => 'Safety',
+            'slug' => 'safety'
+        ]);
+
+        Category::create([
+            'name' => 'Operation',
+            'slug' => 'operation'
+        ]);
+
+        // Post::Factory(30)->create();
 
     }
 }

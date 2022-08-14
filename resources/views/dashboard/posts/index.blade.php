@@ -5,9 +5,21 @@
         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 pb-2 border-bottom">
         <h1 class="h2">List Database spareparts</h1>
     </div>
+
+    <div class="col-sm-6">
+        @if (Session::has('success'))
+            <div class="alert alert-info alert-dismissible fade show " role="alert">
+                <strong>{{ Session::get('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+    </div>
+
     <div class="justify-content-left col-md-5 mb-2">
         <a href="/dashboard/posts/create" class="btn btn-primary my-3 mb-1"><i class="bi bi-file-earmark-plus-fill"></i>
             Insert New Data</a>
+            <a href="/import" class="btn btn-success my-3 mb-1"><i class="bi bi-file-earmark-excel-fill"></i>
+                Import excel file</a>
     </div>
     <div class="row">
         <div class="col justify-content-left col-md-5 my-2 ">
@@ -36,15 +48,15 @@
     @endif
     @if ($posts->count())
         <div class="table-responsive col-lg-11">
-            <table class="table table-striped table-sm">
+            <table class="table table-striped table-sm align-middle">
                 <thead class="align-middle">
                     <tr class="table-info">
                         <th>#</th>
-                        <th>Material Code</th>
+                        <th class="text-center">Material Code</th>
                         <th>Short Description</th>
                         <th class="text-center">Qty</th>
                         <th class="text-center">Category</th>
-                        <th class="text-center">Action</th>
+                        <th class="text-center col-md-2">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,10 +65,10 @@
                             <td>{{ $loop->iteration }}</td>
                             <td class="text-center">{{ $post->kode }}</td>
                             <td>{{ $post->deskripsi }}</td>
-                            <td>{{ $post->qty }}</td>
+                            <td class="text-center">{{ $post->qty }}</td>
                             <td class="text-center"><a href="/dashboard/posts?category={{ $post->category->slug }}"
                                     class="text-decoration-none">{{ $post->category->name }}</a></td>
-                            <td>
+                            <td class="text-center">
                                 <a href="/dashboard/posts/{{ $post->kode }}" class="badge bg-info "><span
                                         data-feather="eye"></span></a>
                                 <a href="/dashboard/posts/{{ $post->kode }}/edit" class="badge bg-warning"><span
@@ -75,6 +87,6 @@
             </table>
         </div>
     @else
-        <P class="text-center fs-4"> Data Not Found</P>
+        <P class="text-center fs-4 fw-bold"> Data not found!</P>
     @endif
 @endsection

@@ -38,9 +38,9 @@
 
             @if ($posts->count())
                 <div class="mb-3 table-responsive">
-                    <table class="table table-striped table-hover table-sm ">
+                    <table class="table table-striped table-hover table-sm align-middle ">
                         <thead>
-                            <tr class="table-info align-middle text-center">
+                            <tr class="table-info text-center">
 
                                 {{-- <th>No</th> --}}
                                 <th>Material code</th>

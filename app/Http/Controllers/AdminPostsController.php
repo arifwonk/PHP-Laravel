@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+
 class AdminPostsController extends Controller
 {
     /**
@@ -18,7 +19,7 @@ class AdminPostsController extends Controller
     {
         return view('dashboard.posts.index', [
             'title' => 'Posts',
-            'posts' => Post::latest()->filter(request(['search', 'category', 'username']))->Paginate(10)->withQueryString()
+            'posts' => Post::latest()->filter(request(['search', 'category', 'username']))->Paginate(25)->withQueryString()
         ]);
         
     }
