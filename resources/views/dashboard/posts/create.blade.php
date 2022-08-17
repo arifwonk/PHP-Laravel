@@ -74,6 +74,13 @@
                 @enderror
             </div>
             <div class="mb-3">
+                <label for="mrp" class="form-label">Mrp</label>
+                <select class="form-select  @error('mrp') is-invalid @enderror" name="mrp">
+                            <option value="VB">VB</option>
+                            <option value="ND">ND</option>
+                </select>
+            </div>
+            <div class="mb-3">
                 <label for="ma" class="form-label">Max</label>
                 <input type="text" class="form-control @error('ma') is-invalid @enderror" id="ma" name="ma"
                     value="{{ old('ma') }}">

@@ -8,7 +8,7 @@
 
     <div class="col-sm-6">
         @if (Session::has('success'))
-            <div class="alert alert-info alert-dismissible fade show " role="alert">
+            <div class="alert alert-success alert-dismissible fade show " role="alert">
                 <strong>{{ Session::get('success') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -16,10 +16,13 @@
     </div>
 
     <div class="justify-content-left col-md-5 mb-2">
+
         <a href="/dashboard/posts/create" class="btn btn-primary my-3 mb-1"><i class="bi bi-file-earmark-plus-fill"></i>
             Insert New Data</a>
-            <a href="/import" class="btn btn-success my-3 mb-1"><i class="bi bi-file-earmark-excel-fill"></i>
+            <a href="/import" class="btn btn-warning my-3 mb-1"><i class="bi bi-file-earmark-spreadsheet"></i>
                 Import excel file</a>
+            <a href="/export" class="btn btn-success my-3 mb-1"><i class="bi bi-file-earmark-excel-fill"></i>
+                Export excel file</a>
     </div>
     <div class="row">
         <div class="col justify-content-left col-md-5 my-2 ">
@@ -51,6 +54,7 @@
             <table class="table table-striped table-sm align-middle">
                 <thead class="align-middle">
                     <tr class="table-info">
+                        <th>Check</th>
                         <th>#</th>
                         <th class="text-center">Material Code</th>
                         <th>Short Description</th>
@@ -62,6 +66,7 @@
                 <tbody>
                     @foreach ($posts as $post)
                         <tr>
+                            <td><input type="checkbox" value{{ $post->id }} wire:model="checked"></td>
                             <td>{{ $loop->iteration }}</td>
                             <td class="text-center">{{ $post->kode }}</td>
                             <td>{{ $post->deskripsi }}</td>

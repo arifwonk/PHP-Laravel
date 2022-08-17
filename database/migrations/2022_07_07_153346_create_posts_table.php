@@ -26,6 +26,7 @@ class CreatePostsTable extends Migration
             $table->string('ma');
             $table->string('rop');
             $table->string('mi');
+            $table->string('mrp');
             $table->string('price');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();

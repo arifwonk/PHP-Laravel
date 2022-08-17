@@ -58,6 +58,17 @@
                 </select>
             </div>
             <div class="mb-3">
+                <label for="mrp" class="form-label">Mrp</label>
+                <select class="form-select  @error('mrp') is-invalid @enderror" name="mrp">
+                    {{-- @if (old('mrp', $post->mrp) == $post->mrp)
+                        <option value="{{ $post->mrp}}" selected>{{ $post->mrp }}</option>
+                   @else --}}
+                        <option value="VB">VB</option>
+                        <option value="ND">ND</option>
+                    {{-- @endif  --}}
+                </select>
+            </div>
+            <div class="mb-3">
                 <label for="qty" class="form-label">Qty</label>
                 <input type="text" class="form-control @error('qty') is-invalid @enderror" id="qty" name="qty"
                     value="{{ old('qty', $post->qty) }}">

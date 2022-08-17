@@ -2,51 +2,52 @@
 
 @section('container')
     <div class="container">
-
-        <a href="/" class="btn btn-primary" class="d-flex justify-content-end">Back to database</a>
-    </div>
-    <div class="container">
         <h1 class="text-center">{{ $title }}</h1>
         <hr>
+
+        <a href="/" class="btn btn-primary my-3" class="d-flex justify-content-end">Back to database</a>
+    </div>
+
+    <div class="container table-responsive mb-5 border-bottom" >      
         
-        <table class="table table-responsive table-striped table-hover my-5">
+        <table class="table table-striped table-hover align-middle ">
             <thead>
                 <tr class="table-success">
-                    <th>Material code</th>
+                    <th class="text-center" >Material code</th>
                     <th>Description</th>
                     <th>Long Description</th>
-                    <th>Qty</th>
-                    <th>Location</th>
-                    <th>Max</th>
-                    <th>Rop</th>
-                    </th>
-                    <th>Safety Stock</th>
-                    <th>Price</th>
-                    <th>Category</th>
+                    <th class="text-center">Qty</th>
+                    <th class="text-center">Location</th>
+                    <th class="text-center">mrp</th>
+                    <th class="text-center">Max</th>
+                    <th class="text-center">Rop</th>
+                    <th class="text-center">Safety Stock</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Category</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{{ $post->kode }}</td>
+                    <td class="text-center">{{ $post->kode }}</td>
                     <td>{{ $post->deskripsi }}</td>
                     <td>{{ $post->l_deskripsi }}</td>
-                    <td>{{ $post->qty }}</td>
-                    <td>{{ $post->loc }}</td>
-                    <td>{{ $post->ma }}</td>
-                    <td>{{ $post->rop }}</td>
-                    <td>{{ $post->mi }}</td>
-                    <td>{{ $post->price }}</td>
-                    <td><a href="/posts?category={{ $post->category->slug }}"
+                    <td class="text-center">{{ $post->qty }}</td>
+                    <td class="text-center">{{ $post->loc }}</td>
+                    <td class="text-center">{{ $post->mrp }}</td>
+                    <td class="text-center">{{ $post->ma }}</td>
+                    <td class="text-center">{{ $post->rop }}</td>
+                    <td class="text-center">{{ $post->mi }}</td>
+                    <td class="text-center">{{ $post->price }}</td>
+                    <td class="text-center"><a href="/posts?category={{ $post->category->slug }}"
                             class="text-decoration-none">{{ $post->category->name }}</a></td>
                 </tr>
             </tbody>
         </table>
-        <hr>
-        <div class="card mb-5">
-            <div class="card-body d-flex justify-content-center">
+    </div>
+        <div class="card mb-5 container ">
+            <div class="card-img d-flex justify-content-center ">
                 <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->name }}"
-                class="img-responsive img-centered img-fluid">
+                class="img-responsive img-centered">
             </div>
           </div>
-    </div>
 @endsection

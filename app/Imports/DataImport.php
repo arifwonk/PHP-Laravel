@@ -28,6 +28,7 @@ class DataImport implements ToModel, WithHeadingRow, WithValidation
             'ma'    => $row['ma'],
             'rop'    => $row['rop'],
             'mi'    => $row['mi'],
+            'mrp'    => $row['mrp'],
             'price'    => $row['price'],
         ]);
     }
@@ -74,6 +75,10 @@ class DataImport implements ToModel, WithHeadingRow, WithValidation
             'mi' => 'required',
             // Above is alias for as it always validates in batches
             '*.mi' => 'required',
+
+            'mrp' => 'required',
+            // Above is alias for as it always validates in batches
+            '*.mrp' => 'required',
 
             'price' => 'required',
             // Above is alias for as it always validates in batches

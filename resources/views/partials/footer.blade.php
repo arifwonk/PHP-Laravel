@@ -12,7 +12,7 @@
         </div>
     </div>
     <footer class="text-center" style="padding: 20px;">
-        <p>Created By <i class="bi bi-suit-heart-fill" style="color: red;"></i> By <u classs="fw-bold" >Mohamad Arif
+        <p>Created By <i class="bi bi-suit-heart-fill" style="color: red;"></i> <u classs="fw-bold" >Mohamad Arif
 
         </u> </p>
     </footer>

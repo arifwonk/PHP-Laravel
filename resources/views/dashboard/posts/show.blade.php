@@ -27,6 +27,7 @@
                             <th>Long Description</th>
                             <th>Qty</th>
                             <th>Location</th>
+                            <th>Mrp</th>
                             <th>Max</th>
                             <th>Rop</th>
                             <th>Safety Stock</th>
@@ -40,6 +41,7 @@
                             <td>{{ $post->l_deskripsi }}</td>
                             <td>{{ $post->qty }}</td>
                             <td>{{ $post->loc }}</td>
+                            <td>{{ $post->mrp }}</td>
                             <td>{{ $post->ma }}</td>
                             <td>{{ $post->rop }}</td>
                             <td>{{ $post->mi }}</td>

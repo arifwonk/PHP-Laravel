@@ -14,8 +14,11 @@
                     <a class="nav-link {{ Request::is('categories') ? 'active' : '' }}"
                         href="/categories">Categories</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about">About</a>
+                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="https://arifwonk.github.io/">About</a>
                 </li>
             </ul>
 
